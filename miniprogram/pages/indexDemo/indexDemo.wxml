@@ -1,0 +1,11 @@
+<view class="indeDemo">
+  <!-- 日历头部 -->
+  <view class="cal">
+    <view class="cal-header">
+      <view wx:for="{{weeks}}" wx:key="item">
+        {{item}}
+      </view>
+    </view>
+  </view>
+
+</view>

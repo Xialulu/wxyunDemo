@@ -1,0 +1,9 @@
+.getInfo{
+  display: block;
+  width: 80%;
+  height: 50px;
+  border-radius: 10rpx;
+  background: red;
+  margin-top: 40px;
+}
+

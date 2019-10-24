@@ -1,0 +1,27 @@
+/* pages/indexDemo/indexDemo.wxss */
+
+.indeDemo {
+  text-align: center;
+}
+
+.cal {
+  border: 1rpx solid #333;
+  display: inline-block;
+  /* margin: 0 auto; */
+}
+
+.cal-header {
+  display: flex;
+  flex-direction: row;
+}
+
+.cal-header view {
+  border-left: 1rpx solid #333;
+  text-align: center;
+  display: block;
+  padding: 0 20rpx;
+}
+
+.cal-header view:first-child {
+  border: 0rpx;
+}

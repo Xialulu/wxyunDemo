@@ -1,0 +1,9 @@
+<!--pages/addFunction/addFunction.wxml-->
+<view class="container">
+  <open-data type="userAvatarUrl"></open-data>
+  <open-data type="userNickName"></open-data>
+  <button class="getInfo" open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="onGotUserInfo">
+    授权登录
+  </button>
+  <button type="default" bindtap="refuseLogin">随便看看</button>
+</view>
