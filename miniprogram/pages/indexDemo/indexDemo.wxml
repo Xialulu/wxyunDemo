@@ -1,11 +1,25 @@
 <view class="indeDemo">
-  <!-- 日历头部 -->
   <view class="cal">
+    <!-- 日历头部 -->
     <view class="cal-header">
-      <view wx:for="{{weeks}}" wx:key="item">
+      <view wx:for="{{weeks}}" wx:key="{{item}}">
         {{item}}
       </view>
     </view>
+    <!-- 日历主体 -->
+    <view class='cal-main'>
+      <view class='calContain' wx:for="{{days}}" wx:key="{{index}}">
+        <view wx:for="{{item}}" wx:for-item="week" wx:key="{{day}}">
+          <view class="cal-contain-detail cal-notnow" wx:if="{{week.at === 'next' || week.at === 'last'}}" >
+            {{week.day}}
+          </view>
+          <view class="cal-contain-detail" wx:else>
+            {{week.day}}
+          </view>
+        </view>
+      </view>
+    </view>
   </view>
-
+  <view>
+  </view>
 </view>
