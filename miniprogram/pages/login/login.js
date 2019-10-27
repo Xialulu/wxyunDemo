@@ -56,7 +56,10 @@ Page({
       data: {},
       success: res => {
         console.log('[云函数] [login] user openid: ', res.result.openid)
-        app.globalData.openid = res.result.openid
+        wx.setStorage({
+          key: "openid",
+          data: JSON.stringify(res.result.openid)
+        })
         this.goToIndex();
       },
       fail: err => {

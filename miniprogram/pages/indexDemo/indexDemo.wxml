@@ -10,16 +10,56 @@
     <view class='cal-main'>
       <view class='calContain' wx:for="{{days}}" wx:key="{{index}}">
         <view wx:for="{{item}}" wx:for-item="week" wx:key="{{day}}">
-          <view class="cal-contain-detail cal-notnow" wx:if="{{week.at === 'next' || week.at === 'last'}}" >
+          <view class="cal-contain-detail cal-notnow" wx:if="{{week.at === 'next' || week.at === 'last'}}">
             {{week.day}}
           </view>
-          <view class="cal-contain-detail" wx:else>
+          <view data-day="{{week.day}}" catchtap="getDetail" class="{{nowDay == week.day ? 'cal-contain-detail nowDay' :  'cal-contain-detail'}}" wx:else>
             {{week.day}}
           </view>
         </view>
       </view>
     </view>
   </view>
-  <view>
+
+
+  <view class="addBtn">
+    <view class="add" bindtap="addInfo">添加活动</view>
+  </view>
+  <!-- 活动信息 -->
+  <view class="info">
+    <view wx:if="{{sourceDate.length > 0}}" wx:for="{{sourceDate}}" wx:key="{{item._id}}">
+      <view class="tipss">
+        <view class="infotitle">活动{{index+1}}</view>
+        <view class="add" data-id="{{item._id}}" bindtap="removeActivity" >删除</view>
+      </view>
+
+      <view class="activivtyDetail">
+        <view class="left">
+          游戏名称：
+        </view>
+        <view class="right">{{item.GameName}}</view>
+      </view>
+      <view class="activivtyDetail">
+        <view class="left">
+          活动名称：
+        </view>
+        <view class="right">{{item.ActivityName}}</view>
+      </view>
+      <view class="activivtyDetail">
+        <view class="left">
+          活动时间：
+        </view>
+        <view class="right">{{item.ActivityTime}}</view>
+      </view>
+      <view class="activivtyDetail">
+        <view class="left">
+          活动描述：
+        </view>
+        <view class="right">{{item.Description}}</view>
+      </view>
+    </view>
+    <view wx:if="{{sourceDate.length == 0}}">
+      暂无活动
+    </view>
   </view>
 </view>

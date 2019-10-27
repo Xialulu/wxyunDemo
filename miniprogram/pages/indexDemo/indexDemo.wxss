@@ -48,3 +48,46 @@
 .cal-notnow{
   background: rgba(0, 0, 0, 0.3)
 }
+
+.nowDay{
+  background: pink
+}
+
+.info{
+  margin-top: 50rpx;
+  padding:0 50rpx;
+}
+
+.infotitle{
+  text-align:left;
+}
+
+.activivtyDetail{
+  display: flex;
+  justify-content: flex-end;
+}
+.left{
+  width: 200rpx;
+  text-align: left
+}
+
+.right{
+  width: 300rpx;
+  text-align: right
+}
+
+.add{
+  padding: 20rpx 50rpx;
+  border: 1px soid  #ccc;
+  background: green;
+}
+
+.addBtn{
+  display: flex;
+  justify-content: flex-end;
+}
+
+.tipss{
+  display: flex;
+  justify-content: space-between;
+}
