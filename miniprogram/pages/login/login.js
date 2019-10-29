@@ -43,7 +43,7 @@ Page({
       wx.navigateBack()
     } else {
       wx.redirectTo({
-        url: "../indexDemo/indexDemo",
+        url: "../index/index",
       })
     }
 

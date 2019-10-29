@@ -1,19 +1,21 @@
 <!--pages/addFunction/addFunction.wxml-->
 <form bindsubmit="formSubmit">
   <view class="inputform">
-    <input class="weui-input" name="GameName" placeholder="游戏名称" />
+    <input class="weui-input" name="GameName" placeholder="游戏名称" value='{{activityInfoDetail.GameName}}' />
   </view>
 
   <view class="inputform">
-    <input class="weui-input" name="ActivityName" placeholder="活动名称" />
+    <input class="weui-input" name="ActivityName" placeholder="活动名称" value='{{activityInfoDetail.ActivityName}}' />
   </view>
   <view class="inputform">
-    <textarea class="weui-input" placeholder="描述" name="Description" />
+    <textarea class="weui-input" placeholder="描述" name="Description" value='{{activityInfoDetail.Description}}' />
   </view>
   <view class="inputform">
     <view bindtap="showDate">
-    <view wx:if="{{StartTime}}">{{StartTime}}</view>
-    <view wx:else>请选择时间</view>
+      <view wx:if="{{ActivityTime && !isEdit}}">{{ActivityTime}}</view>
+      <view wx:if="{{!ActivityTime && isEdit}}">{{activityInfoDetail.ActivityTime}}</view>
+      <view wx:if="{{ActivityTime && isEdit}}">{{ActivityTime}}</view>
+      <view wx:if="{{!ActivityTime && !isEdit}}">请选择时间</view>
     </view>
   </view>
   <view class="btn-area">
@@ -25,13 +27,13 @@
 <view wx:if="{{isShowDate}}" class="DateShow" catchtap="onClose">
   <picker-view indicator-style="height: 50px;" class="pickerStyle" value="{{value}}" bindchange="bindChange">
     <picker-view-column>
-      <view wx:for="{{years}}" wx:key ="{{item}}" style="line-height: 50px">{{item}}年</view>
+      <view wx:for="{{years}}" wx:key="{{item}}" style="line-height: 50px">{{item}}年</view>
     </picker-view-column>
     <picker-view-column>
-      <view wx:for="{{months}}"  wx:key ="{{item}}" style="line-height: 50px">{{item}}月</view>
+      <view wx:for="{{months}}" wx:key="{{item}}" style="line-height: 50px">{{item}}月</view>
     </picker-view-column>
     <picker-view-column>
-      <view wx:for="{{days}}"  wx:key ="{{item}}" style="line-height: 50px">{{item}}日</view>
+      <view wx:for="{{days}}" wx:key="{{item}}" style="line-height: 50px">{{item}}日</view>
     </picker-view-column>
   </picker-view>
 </view>
